@@ -1,0 +1,207 @@
+JavaScript In the Browser: DOM and Events fundamentals
+
+=================================================================================================================
+Section Intro:
+
+  Building Projects and DOM Manipulation
+=================================================================================================================
+Section Roadmap
+  All topic are important-
+=================================================================================================================
+Project1 # Guess My Number-
+
+//Selects the element 
+console.log(document.querySelector('.message'));
+
+//on top on element selected we select the content
+console.log(document.querySelector('.message').textContent);
+
+**TIP
+Place <script> tag in html file a the end of html body to render the JavaScript after html.
+=================================================================================================================
+What's DOM and DOM Manipulation-
+
+document is a special object which serves as a entry point into the DOM.
+DOM is a complete representation of HTML document also called as DOM tree.
+
+DOM !=JavaScript
+
+DOM Methods and properties and DOM are not part of JavaScript
+
+DOM is part of web API's
+these API's are like libraries that browsers implement and we can access it using our JavaScript code.
+
+API-Application programming inteface
+e.g.DOM method and properties api, timers api, fetch api.
+=================================================================================================================
+Selecting and Manipulating Elements
+
+for getting value from input element we use .value.
+  
+  document.querySelector('.guess').value = 23;
+  console.log(document.querySelector('.guess').value);
+
+for getting content in element we use .textConent-
+  
+  document.querySelector('.score').textContent = 10;
+  console.log(document.querySelector('.score').textContent);
+
+=================================================================================================================
+Handling Click Events
+=================================================================================================================
+Event Listener-
+  -Listens to events that occur in browser. e.g. mouse click,mouse moving, key press.
+  -event happens on web page
+  -with this we can wait for cetain event to happen and then react to it.
+  -1-select an element where event should happen
+  -2-on that select element call addEventListener method which more used than 
+    other EventListener methods hence we use it.
+  -3-pass the event type e.g. 'click' and pass function and define it what it should do. 
+  -here as function is also a value hence we can pass it to addEventListener method.
+  -function is called event handler.
+
+  -whenever we get something from user interface is always is a string e.g. with input element.
+
+  //here addEvent Listener accepts two arguments 1 is event and other is function which tells what should occur when the event happens
+  // here we do not call this funtion as javascript engine which runs in browser will automatically call the 
+  // function whenever that particular event happens.
+  
+  document.querySelector('.check').addEventListener('click', function () {} );
+  
+
+=================================================================================================================
+Implementing the Game Logic-
+
+'' logic
+score >1 logic
+score>number 
+and score<number logic implemented.
+=================================================================================================================
+Manipulating styles using javascript
+
+//Also css property is in camel case naming
+    //setting up background color to green when player wins.
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    // this color style will be inline css for selected element.
+
+    //inline css for element having .number class
+    document.querySelector('.number').style.width = '30rem';
+
+=================================================================================================================
+Coding Challenge #1
+
+Implement the game reset functionality, so that the  player can make a new  guess! Here is how:
+
+1.Select the element with .again class and attach a click event handler
+
+2) In the handler function restore the initial value of the score and secretNumber variables
+
+3. Restore the initial conditions of the message, number, score and guess input field
+
+4. Also restore the original background  color  (#222) and nuber width ('15rem') 
+
+=================================================================================================================
+Implemeting high scores
+
+highscore set to 0 if score is greater than highscore we set score as highscore.
+=================================================================================================================
+Refactoring our code: The Dry Principle-
+
+Dont repeat yourself-
+
+Step 1: Identify duplicat code.
+Step 2: find a solution to eliminate duplicate code.
+Step 3: remove the duplicate code i.e. Refactoring.
+
+=================================================================================================================
+PROECT #2 MODAL WINDOW- 
+
+A pop window which will blur the background.
+closes when we click on ❌ or blur background or esc button on keyboard.
+
+To disconnect the url which is running via nodejs we stop the terminal by ctrl+c
+
+document.querySelector() =>will select only the first element of that class which gets matched.
+document.querySelectorAll() =>this will select all the elements that gets matched.
+
+After this a document.querySelectorAll() will create a nodeList of element and we can iterate over tham using loop
+ust like arrays.
+
+
+=================================================================================================================
+Working with Classes-
+
+document.querySelector('<select element>').classList.remove('<class name without .>') 
+  to remove class from an selected element.
+classList.add()
+  to add class.
+We can also search for a class using classList.
+
+Using these functionality of javascript we can activate and deactivate certain fuctionalities in javascript.
+=================================================================================================================
+Handling 'esc' keypress event 
+
+search for a class in a elmenet-
+
+  keyboard events are global event as they do not happen on specific element.
+
+  
+  Hence we listen on the whole document.
+
+  3 types of event in keyboard events-
+    1- key press - event will occur till the time we are pressing the key 
+    2- key down - whenever we press the key
+    3- key up - whenver we move our finger above the pressed key 
+
+**TIP
+whenver an event happens we will have information about that event in the event handler function.
+
+we can access the event info using a parameter passed to event handler function.
+
+to access which key is press using key property of event object which we have passed to event 
+handler function as parameter which contains all the events details.
+
+keyboard event as global event hence we use addEventListerner on document object
+
+
+=================================================================================================================
+PROJECT #3 Pig Game-
+=================================================================================================================
+Flowchart-
+  diagrams.net 
+
+we can select element using-
+  document.getElementById('<id name without #>')
+  -works faster than document.querySelector()
+
+set the 2 scores to 0;
+added hidden class to hide dice. 
+=================================================================================================================
+Rolling the dice- 
+
+Generate a random number 
+display the img corresponding to dice value.
+store the dice value to curr score.
+
+TO set the 'src' value in the img we use 
+  <selected_element>.src=''
+
+
+=================================================================================================================
+Switching the active player-
+
+document.querySelector('<select an element>').classList.toggle('<class name>');
+toggle method of classList will add passed class if it is absent else add it.  
+
+
+State variables 
+  costant variables that can maintain the state of Application.
+
+
+=================================================================================================================
+Resetting the Game-
+
+Reset all the variables to there initial value-
+
+with this section 7 we finished the fundamentals part.
+=================================================================================================================
